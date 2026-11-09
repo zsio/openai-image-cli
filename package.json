@@ -1,0 +1,35 @@
+{
+  "name": "local-gpt-image-cli",
+  "version": "1.0.0",
+  "description": "A local CLI for the OpenAI Images API, with one image per invocation.",
+  "license": "MIT",
+  "author": "zsio",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zsio/openai-image-cli.git"
+  },
+  "homepage": "https://github.com/zsio/openai-image-cli#readme",
+  "bugs": {
+    "url": "https://github.com/zsio/openai-image-cli/issues"
+  },
+  "keywords": ["openai", "gpt-image", "image-generation", "cli", "agent-skills"],
+  "files": ["bin/", "src/", "scripts/", "skills/", "README.md", "LICENSE"],
+  "type": "module",
+  "bin": {
+    "gpt-image": "bin/gpt-image.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check bin/gpt-image.mjs && node --check src/cli.mjs && node --check src/config.mjs && node --check src/images.mjs && node --check src/output.mjs",
+    "start": "node bin/gpt-image.mjs",
+    "install:local": "node scripts/install-local.mjs",
+    "check:secrets": "node scripts/check-secrets.mjs",
+    "prepack": "npm run check:secrets"
+  },
+  "dependencies": {
+    "openai": "^7.53.0"
+  }
+}

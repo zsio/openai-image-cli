@@ -1,0 +1,3 @@
+interface:
+  display_name: "GPT Image CLI"
+  short_description: "Generate and edit images with the local GPT Image CLI"
